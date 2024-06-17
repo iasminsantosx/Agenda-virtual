@@ -173,10 +173,31 @@ const listarAgendamentosPorUsuario = async (req, res) => {
   }
 };
 
+const listarAgendamentosPorData = async (req, res) => {
+
+  const { usuario_id } = req.params;
+
+  const { data } = req.query;
+  try {
+
+      const agendamento = await knex("agenda").select("*")
+      .where({usuario_id})
+      .andWhere("data_evento",data)
+      .orderBy("hora_inicio", "asc");
+      
+      return res.status(200).json(agendamento);
+  
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ mensagem: "Erro interno do servidor" });
+  }
+};
+
 
 module.exports = {
     agendar,
     excluiAgendamento,
     editarAgendamento,
-    listarAgendamentosPorUsuario
+    listarAgendamentosPorUsuario,
+    listarAgendamentosPorData
 };

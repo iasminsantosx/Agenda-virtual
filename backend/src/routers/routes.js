@@ -1,6 +1,6 @@
 const express = require('express');
 const { editarUsuario, cadastrarUsuario, excluiUsuario, listarUsuarios, listarUsuario } = require("../controllers/usuario");
-const { agendar, excluiAgendamento, editarAgendamento, listarAgendamentosPorUsuario } = require("../controllers/agenda");
+const { agendar, excluiAgendamento, editarAgendamento, listarAgendamentosPorUsuario, listarAgendamentosPorData } = require("../controllers/agenda");
 const login = require("../controllers/login");
 
 const loginAutenticacao = require("../middleware/loginAutenticacao");
@@ -19,4 +19,5 @@ router.use(loginAutenticacao);
 router.post("/agenda", validarRequisicao(agendamentoSchema),agendar);
 router.put("/agenda/:id",editarAgendamento);
 router.delete("/agenda/:id", excluiAgendamento);
-router.get("/agenda;usuario/:usuario_id",listarAgendamentosPorUsuario);
+router.get("/agenda-usuario/:usuario_id",listarAgendamentosPorUsuario);
+router.get("/agenda-data/:usuario_id",listarAgendamentosPorData);
