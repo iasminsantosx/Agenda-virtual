@@ -1,11 +1,10 @@
-import PageLogin from "./pages/Login";
-import TableAgenda from "./components/tableAgenda/TableAgenda";
+import { Router } from "./routes/Routes";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <>
-      {/* <PageLogin */}
-      <TableAgenda />
-    </>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   );
 }
 
