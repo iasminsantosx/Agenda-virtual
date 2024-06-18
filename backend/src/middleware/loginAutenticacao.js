@@ -17,7 +17,7 @@ const loginAutenticacao = async (req, res, next) => {
             return res.status(401).json({ mensagem: 'Para acessar este recurso um token de autenticação válido deve ser enviado.' })
         }
         const { id } = jwt.verify(token, senhaToken);
-        let usuario = (await knex('funcionario').select('*').where('id', id));
+        let usuario = (await knex('usuario').select('*').where({id}));
 
 
         if (!usuario.length) {

@@ -11,8 +11,8 @@ const agendar = async (req, res) => {
 
       const usuario = await knex('usuario').select("*").where('id', usuario_id).first();
 
-      if (usuario) {
-        return res.status(400).json({ mensagem: "Usuario não encontrado." });
+      if (!usuario) {
+        return res.status(404).json({ mensagem: "Usuario não encontrado." });
       }
 
       const usuarioId = parseInt(usuario.id, 10);
@@ -58,6 +58,7 @@ const excluiAgendamento = async (req, res) => {
 
     const { id } = req.params;
     try {
+      console.log("Id",id);
       const agendamento = await knex("agenda")
         .select("*")
         .where({ id })
@@ -69,10 +70,11 @@ const excluiAgendamento = async (req, res) => {
           .json({ mensagem: "Este evento ainda não foi cadastrado" });
       }
   
-      const agendamentoExcluido = await knex("agendamento").where({ id }).del();
+      const agendamentoExcluido = await knex("agenda").where({ id }).del();
   
       return res.status(204).json();
     } catch (error) {
+      console.log(error)
       return res.status(500).json({ mensagem: "Erro interno do servidor" });
     }
 };
@@ -89,7 +91,7 @@ const editarAgendamento = async (req, res) => {
 
     const agendamentoAtual = await knex('agenda').select("*").where({ id }).first();
 
-    if(agendamentoAtual){
+    if(!agendamentoAtual){
         return res.status(404).json({mensagem: "Evento não encontrado."})
     };
 

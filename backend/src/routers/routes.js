@@ -8,6 +8,7 @@ const validarRequisicao = require("../middleware/validarRequisicao");
 
 const loginSchema = require("../schema/loginSchema");
 const usuarioSchema = require("../schema/usuarioSchema")
+const agendaSchema = require("../schema/agendaSchema");
 
 const router = express();
 
@@ -16,8 +17,11 @@ router.post("/login", validarRequisicao(loginSchema), login);
 
 router.use(loginAutenticacao);
 
-router.post("/agenda", validarRequisicao(agendamentoSchema),agendar);
+router.post("/agenda", validarRequisicao(agendaSchema),agendar);
 router.put("/agenda/:id",editarAgendamento);
 router.delete("/agenda/:id", excluiAgendamento);
 router.get("/agenda-usuario/:usuario_id",listarAgendamentosPorUsuario);
 router.get("/agenda-data/:usuario_id",listarAgendamentosPorData);
+
+
+module.exports = router;
