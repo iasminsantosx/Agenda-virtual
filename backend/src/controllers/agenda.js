@@ -24,7 +24,7 @@ const agendar = async (req, res) => {
       .andWhere(builder => {
         builder.where(function () {
           this.where("hora_inicio", ">=", hora_inicio)
-            .andWhere("hora_inicio", "<=", hora_termino);
+            .andWhere("hora_inicio", "<", hora_termino);
         }).orWhere(function () {
           this.where("hora_inicio", "<=", hora_inicio)
             .andWhere("hora_termino", ">=", hora_inicio);
@@ -117,7 +117,7 @@ const editarAgendamento = async (req, res) => {
       .andWhere(builder => {
         builder.where(function () {
           this.where("hora_inicio", ">=", horaInicio)
-            .andWhere("hora_inicio", "<=", horaTermino);
+            .andWhere("hora_inicio", "<", horaTermino);
         }).orWhere(function () {
           this.where("hora_inicio", "<=", horaInicio)
             .andWhere("hora_termino", ">=", horaInicio);
