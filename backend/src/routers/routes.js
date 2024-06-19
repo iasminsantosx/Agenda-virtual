@@ -1,5 +1,5 @@
 const express = require('express');
-const { editarUsuario, cadastrarUsuario, excluiUsuario, listarUsuarios, listarUsuario } = require("../controllers/usuario");
+const { cadastrarUsuario } = require("../controllers/usuario");
 const { agendar, excluiAgendamento, editarAgendamento, listarAgendamentosPorUsuario, listarAgendamentosPorData } = require("../controllers/agenda");
 const login = require("../controllers/login");
 
