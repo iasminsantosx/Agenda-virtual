@@ -87,7 +87,7 @@ export function EditarAgendamento (){
         <div className="content">
           <div className="card">
           <form>
-            <div classNameName="inputContainer">
+            <div className="inputContainer">
             <label htmlFor="email">Descrição</label>
             <input
                 type="text"
@@ -96,7 +96,7 @@ export function EditarAgendamento (){
             />
             </div>
 
-            <div classNameName="inputContainer">
+            <div className="inputContainer">
             <label>Hora de Inicio</label>
             <input
                 type="time"
@@ -116,7 +116,7 @@ export function EditarAgendamento (){
                 onChange={ ({ target: { value } }) => setDataMarcacao(value) }
             />
             </div>
-            <button onClick={handleEditarAgenda} classNameName="button">Agendar</button>
+            <button onClick={handleEditarAgenda} className="button">Agendar</button>
         </form>
           </div>
         </div>

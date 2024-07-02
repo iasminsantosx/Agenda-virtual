@@ -50,13 +50,13 @@ export function Login() {
     }
 
   return (
-    <div classNameName="container">
-      <header classNameName="header">
+    <div className="container">
+      <header className="header">
         <span>Por favor digite suas informações de login</span>
       </header>
 
       <form>
-        <div classNameName="inputContainer">
+        <div className="inputContainer">
           <label htmlFor="email">E-mail</label>
           <input
             type="text"
@@ -68,7 +68,7 @@ export function Login() {
           />
         </div>
 
-        <div classNameName="inputContainer">
+        <div className="inputContainer">
           <label htmlFor="password">Senha</label>
           <input
             type="password"
@@ -82,10 +82,10 @@ export function Login() {
 
         <a href="#">Esqueceu sua senha ?</a>
 
-        <button classNameName="button" onClick={handleLoginBtn}>
+        <button className="button" onClick={handleLoginBtn}>
           Entrar <img src={arrowImg} alt="->" />
         </button>
-        <div classNameName="footer">
+        <div className="footer">
           <p>Você não tem uma conta?</p>
           <Link to="/cadastro">Crie a sua conta aqui</Link>
         </div>

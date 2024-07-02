@@ -72,7 +72,7 @@ export function Agendar (){
         <div className="content">
           <div className="card">
           <form>
-            <div classNameName="inputContainer">
+            <div className="inputContainer">
             <label htmlFor="email">Descrição</label>
             <input
                 type="text"
@@ -81,7 +81,7 @@ export function Agendar (){
             />
             </div>
 
-            <div classNameName="inputContainer">
+            <div className="inputContainer">
             <label>Hora de Inicio</label>
             <input
                 type="time"
@@ -101,7 +101,7 @@ export function Agendar (){
                 onChange={ ({ target: { value } }) => setDataMarcacao(value) }
             />
             </div>
-            <button onClick={createNewScheduling} classNameName="button">Agendar</button>
+            <button onClick={createNewScheduling} className="button">Agendar</button>
         </form>
           </div>
         </div>

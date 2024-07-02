@@ -43,13 +43,13 @@ export function Cadastro() {
     }
   
   return (
-    <div classNameName="container">
-      <header classNameName="header">
+    <div className="container">
+      <header className="header">
         <span>Por favor digite suas informações de cadastro</span>
       </header>
 
       <form>
-        <div classNameName="inputContainer">
+        <div className="inputContainer">
           <label htmlFor="email">E-mail</label>
           <input
             type="text"
@@ -60,7 +60,7 @@ export function Cadastro() {
           />
         </div>
 
-        <div classNameName="inputContainer">
+        <div className="inputContainer">
           <label htmlFor="password">Senha</label>
           <input
             type="password"
@@ -71,10 +71,10 @@ export function Cadastro() {
           />
         </div>
 
-        <button onClick={registerNewUser} classNameName="button">
+        <button onClick={registerNewUser} className="button">
           Cadastrar <img src={arrowImg} alt="->" />
         </button>
-        <div classNameName="footer">
+        <div className="footer">
           <p>Você já tem uma conta?</p>
           <Link to="/">Acesse sua conta aqui</Link>
         </div>
