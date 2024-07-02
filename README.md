@@ -11,10 +11,10 @@ Link do Deploy: https://agenda-virtual-eight.vercel.app/
 ### :desktop_computer: Desktop
 ### As Telas do Sistema
 
-<img src="https://github.com/iasminsantosx/Agenda-virtual/assets/60939035/41612366-57f7-4872-b4af-86121d208ad6"/>
-<img src="https://github.com/iasminsantosx/Agenda-virtual/assets/60939035/e399d904-0f3b-49f8-bd1e-041ca6045908"/>
-<img src="https://github.com/iasminsantosx/Agenda-virtual/assets/60939035/3a60c4e4-fab4-4914-8b26-4e5fa163011f"/>
-<img src="https://github.com/iasminsantosx/Agenda-virtual/assets/60939035/80212f80-6cb8-42be-a9a5-e6c98a6980d5"/>
+<img src=""/>
+<img src="https://github.com/iasminsantosx/Agenda-virtual/assets/60939035/aa819a43-4e74-4cd8-9ae3-b991ac3ffe3f"/>
+<img src="https://github.com/iasminsantosx/Agenda-virtual/assets/60939035/50d92b9b-a53e-4280-b1a3-0acac6d8aa66"/>
+<img src="https://github.com/iasminsantosx/Agenda-virtual/assets/60939035/160edc0a-4ae6-4690-b58c-8ebacfb4421c"/>
 
 
 ## :triangular_flag_on_post: Contribua com o projeto
