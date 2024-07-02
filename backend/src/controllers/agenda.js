@@ -88,6 +88,7 @@ const editarAgendamento = async (req, res) => {
 
     let horaInicio;
     let horaTermino;
+    let dataEvento;
 
     const agendamentoAtual = await knex('agenda').select("*").where({ id }).first();
 
@@ -108,12 +109,19 @@ const editarAgendamento = async (req, res) => {
     }else{
       horaTermino = hora_termino;
     }
-    
 
-    const horario = await knex("agenda")
+    if(data_evento === "undefined/undefined/"){
+      dataEvento = agendamentoAtual.data_evento;
+    }else{
+      dataEvento = data_evento;
+    }
+
+    if(hora_inicio && hora_termino){
+
+      const horario = await knex("agenda")
       .select("*")
       .where("usuario_id", usuario.id)
-      .where("data_evento", data_evento)
+      .where("data_evento", dataEvento)
       .andWhere(builder => {
         builder.where(function () {
           this.where("hora_inicio", ">=", horaInicio)
@@ -129,11 +137,13 @@ const editarAgendamento = async (req, res) => {
       return res.status(400).json({ mensagem: "Horário ocupado." });
     }
 
+    }
+
     // Cria um objeto com os dados não nulos ou vazios
     const dadosAtualizados = {
       usuario_id: usuario.id,
       descricao,
-      data_evento,
+      data_evento:dataEvento,
       hora_inicio,
       hora_termino
     };
