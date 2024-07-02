@@ -1,4 +1,5 @@
 # AgendaOnline
+
 Sistema de Agenda Online, para agendar seus compromissos
 Link do Deploy: https://agenda-virtual-eight.vercel.app/
 
@@ -9,6 +10,7 @@ Link do Deploy: https://agenda-virtual-eight.vercel.app/
 ## :paintbrush: Layout
 
 ### :desktop_computer: Desktop
+
 ### As Telas do Sistema
 
 <img src=""/>
@@ -16,14 +18,15 @@ Link do Deploy: https://agenda-virtual-eight.vercel.app/
 <img src="https://github.com/iasminsantosx/Agenda-virtual/assets/60939035/50d92b9b-a53e-4280-b1a3-0acac6d8aa66"/>
 <img src="https://github.com/iasminsantosx/Agenda-virtual/assets/60939035/160edc0a-4ae6-4690-b58c-8ebacfb4421c"/>
 
-
 ## :triangular_flag_on_post: Contribua com o projeto
 
 - Realize o Fork
 - Faça as modificações necessárias
 - Realize a Pull Request (PR)
 - crie sua base de dados no Postgres
+
 ## :computer: Rodando o Projeto
+
 ```shell
 # 1. Clone o projeto
 
@@ -50,7 +53,6 @@ npm run dev
 <a href="https://github.com/iasminsantosx">
 <img src="https://avatars.githubusercontent.com/iasminsantosx" width="50px" />
 </a>
-
 
 ## :writing_hand: Dados do Projeto
 

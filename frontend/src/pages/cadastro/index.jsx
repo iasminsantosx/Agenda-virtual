@@ -78,7 +78,7 @@ export function Cadastro() {
             name="password"
             id="password"
             placeholder="********************"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setSenha(e.target.value)}
           />
         </div>
 
