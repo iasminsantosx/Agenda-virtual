@@ -55,7 +55,7 @@ export function Cadastro() {
             type="text"
             name="email"
             id="email"
-            placeholder="johndoe@gmail.com"
+            placeholder="teste@email.com"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
