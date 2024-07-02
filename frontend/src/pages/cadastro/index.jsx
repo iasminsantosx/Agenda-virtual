@@ -49,6 +49,17 @@ export function Cadastro() {
       </header>
 
       <form>
+
+        <div className="inputContainer">
+            <label htmlFor="email">Nome</label>
+            <input
+              type="text"
+              name="Nome"
+              id="nome"
+              placeholder="Teste silva"
+              onChange={(e) => setNome(e.target.value)}
+            />
+        </div>
         <div className="inputContainer">
           <label htmlFor="email">E-mail</label>
           <input
