@@ -43,24 +43,25 @@ export function Agendamentos (){
    history.push(`/editar-agendamento/${id}`);
  };
 
- const handleAgendamentoPorData = async () => {
-   const dataFormatada = formatarDataBrasileira(Data);
-   setIsDisable(true);
-   try {
-     const response = await listagemAgendamentosDataService(dataFormatada,user.id);
+ const handleAgendamentoPorData = async (event) => {
+    event.preventDefault();
+    const dataFormatada = formatarDataBrasileira(Data);
+    setIsDisable(true);
+    try {
+      const response = await listagemAgendamentosDataService(dataFormatada,user.id);
 
-     const agendamento = response.data.map(ag => ({
-       id:ag.id,
-       data_evento:ag.data_evento,
-       hora_inicio: ag.hora_inicio,
-       hora_termino: ag.hora_termino,
-       descricao: ag.descricao,
-     }));
+      const agendamento = response.data.map(ag => ({
+        id:ag.id,
+        data_evento:ag.data_evento,
+        hora_inicio: ag.hora_inicio,
+        hora_termino: ag.hora_termino,
+        descricao: ag.descricao,
+      }));
 
-     setAgendamentos(agendamento);
-   } catch(error) {
-     console.error(error);
-   }
+      setAgendamentos(agendamento);
+    } catch(error) {
+      console.error(error);
+    }
  }
 
  const handleAdmin = () => {
@@ -100,61 +101,36 @@ export function Agendamentos (){
 
     return(
         <div className="container">
-            <header className="header">
+          <header className="header">
             <span>Agenda</span>
             <button className="logout-button" onClick={handleAdmin}>Voltar</button>
-            </header>
-        
-            <div className="content">
+          </header>
+          <div className="content">
             <div className="card">
-            <FormControl display="flex" flexDir="column" gap="4">
-                <Box>
-                <Text>Data:</Text>
-                <Input type="date" value={Data} onChange={(e) => setData(e.target.value)} />
-                <Button
-                    _hover={{ 
-                    bg: "blue.600",
-                    color: "white"
-                    }}
-                    onClick={handleAgendamentoPorData}
-                >
-                    Agendamentos Por Data
-                </Button>
-                </Box>
-
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                { agendamentos.map(agendamento => (
-                <Box key={ agendamento.id } bg="gray.100" p="4" borderRadius="md" style={{ marginBottom: '12px' }}>
-                    <HStack spacing="4" justify="center">
-                    <li>
-                        <strong>Descrição:</strong> { agendamento.descricao } - <strong>Data:</strong> { agendamento.data_evento } -  <strong>Horário Inicio:</strong> { agendamento.hora_inicio } - <strong>Horário Termino:</strong> { agendamento.hora_termino }
-                    </li>
-
-                    <Button
-                        _hover={{ 
-                        bg: "blue.300",
-                        color: "white"
-                        }}
-                        onClick={() => handleEditar(agendamento.id)}
-                    >
-                        <MdEdit />
-                    </Button>
-
-                    <Button
-                        _hover={{ 
-                        bg: "red.400",
-                        color: "white"
-                        }}
-                        onClick={() => handleDelete(agendamento.id)}
-                    >
-                        <MdDelete />
-                    </Button>
-                    </HStack>
-                </Box>
-                ))}
+              <form className="form-control">
+                <div className="box">
+                  <label>Data:</label>
+                  <input type="date" value={Data} onChange={(e) => setData(e.target.value)} />
+                  <Button _hover={{ bg: "blue.600", color: "white"}} onClick={handleAgendamentoPorData}> Agendamentos Por Data</Button>
+                </div>
+                <ul className="agendamentos-list">
+                  {agendamentos.map(agendamento => (
+                    <div key={agendamento.id} className="agendamento-box">
+                      <div className="agendamento-content">
+                        <li>
+                          <strong>Descrição:</strong> {agendamento.descricao} - 
+                          <strong> Data:</strong> {agendamento.data_evento} -  
+                          <strong> Horário Inicio:</strong> {agendamento.hora_inicio} - 
+                          <strong> Horário Termino:</strong> {agendamento.hora_termino}
+                        </li>
+                        <button className="edit-button" onClick={() => handleEditar(agendamento.id)}><MdEdit/></button>
+                        <button className="delete-button" onClick={() => handleDelete(agendamento.id)}><MdDelete /></button>
+                      </div>
+                    </div>
+                  ))}
                 </ul>
-            </FormControl>
-            </div>
+              </form>
+          </div>
             </div>
             <ToastContainer />
       </div>
